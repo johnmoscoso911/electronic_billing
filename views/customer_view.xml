@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--FORM: Customers-->
+		<record id="view_sri_customer_form" model="ir.ui.view">
+			<field name="name">sri.customer.form</field>
+			<field name="model">sri.customer</field>
+			<field name="arch" type="xml">
+				<form string="Customer">
+					<sheet>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only" />
+							<h1>
+								<field name="name" default_focus="1" placeholder="Name" />
+							</h1>
+							<label for="identification" class="oe_edit_only oe_inline" />
+							<field name="identification" />
+						</div>
+						<group>
+							<!--field name="code" class="oe_inline" /-->
+							<field name="email" widget="email" />
+							<field name="phone" widget="phone" />
+							<field name="address" widget="text" />
+							<field name="plate" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--END FORM-->
+		<!--LIST: Customers-->
+		<record id="view_sri_customer_list" model="ir.ui.view">
+			<field name="name">sri.customer.list</field>
+			<field name="model">sri.customer</field>
+			<field name="arch" type="xml">
+				<tree string="Customers">
+					<field name="identification"/>
+					<field name="name"/>
+					<field name="email"/>
+					<field name="phone"/>
+				</tree>
+			</field>
+		</record>
+		<!--END LIST-->
+		<!--SEARCH: Customers-->
+		<record id="view_sri_customer_search" model="ir.ui.view">
+			<field name="name">sri.customer.search</field>
+			<field name="model">sri.customer</field>
+			<field name="arch" type="xml">
+				<search string="Customers">
+					<field name="name"/>
+					<field name="identification"/>
+					<field name="phone"/>
+					<field name="email"/>
+					<!--filter string="" domain="[('', '=', '')]" /-->
+					<group expand="0" string="Group By">
+						<!--filter string="" domain="" context="{'group_by':''}" /-->
+					</group>
+				</search>
+			</field>
+		</record>
+		<!--END SEARCH-->
+		<!--KANBAN: Customers-->
+		<record id="view_sri_customer_kanban" model="ir.ui.view">
+			<field name="name">sri.customer.kanban</field>
+			<field name="model">sri.customer</field>
+			<field name="arch" type="xml">
+				<kanban class="o_res_partner_kanban">
+					<field name="name" />
+					<field name="phone" />
+					<field name="email" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_kanban_global_click oe_kanban_details">
+								<strong class="oe_partner_heading"><field name="name" /></strong>
+								<ul>
+									<li t-if="record.phone.raw_value" class="o_text_overflow"><field name="phone"/></li>
+									<li t-if="record.email.raw_value" class="o_text_overflow"><field name="email"/></li>
+								</ul>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+		<!--END KANBAN-->
+		<!--ACTION: Customers-->
+		<record id="action_sri_customer_form" model="ir.actions.act_window">
+			<field name="name">Customers</field>
+			<field name="res_model">sri.customer</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="search_view_id" ref="view_sri_customer_search"/>
+			<!--field name="view_id" ref="view_sri_customer_list"/-->
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add an customer
+				</p><p>
+				</p>
+			</field>
+		</record>
+		<menuitem action="action_sri_customer_form"
+			id="menu_action_sri_customer_form"
+			parent="menu_electronic_billing_customer"
+			sequence="1" />
+		<!--END ACTION + MENU-->
+	</data>
+</openerp>

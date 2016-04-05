@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sri_emission_type_user,sri.emission.type user,model_sri_emission_type,base.group_user,1,0,0,0
+access_sri_voucher_type_user,sri.voucher.type user,model_sri_voucher_type,base.group_user,1,0,0,0
+access_sri_id_type_user,sri.id.type user,model_sri_id_type,base.group_user,1,0,0,0
+access_sri_issuing_user,sri.issuing user,model_sri_issuing,base.group_user,1,0,0,0
+access_sri_customer_user,sri.customer user,model_sri_customer,base.group_user,1,0,0,0
+access_sri_product_user,sri.product user,model_sri_product,base.group_user,1,0,0,0
+access_sri_product_additional_user,sri.product.additional user,model_sri_product_additional,base.group_user,1,0,0,0

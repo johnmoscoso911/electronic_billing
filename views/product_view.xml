@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--FORM: Product-->
+		<record id="view_sri_product_form" model="ir.ui.view">
+			<field name="name">sri.product.form</field>
+			<field name="model">sri.product</field>
+			<field name="arch" type="xml">
+				<form string="Product">
+					<sheet>
+						<div class="oe_title">
+							<label for="name" class="oe_edit_only" />
+							<h1>
+								<field name="name" default_focus="1" placeholder="Name" />
+							</h1>
+							<label for="code" class="oe_edit_only oe_inline" />
+							<h2>
+								<field name="code" class="oe_inline" />
+							</h2>
+						</div>
+						<group>
+							<group>
+								<field name="ancillary_code" />
+							</group>
+							<group class="oe_subtotal_footer">
+								<field name="unit_price" />
+								<field name="discount" />
+								<field name="discount_amount" class="oe_subtotal_footer_separator" />
+								<field name="iva" />
+								<field name="iva_amount" class="oe_subtotal_footer_separator" />
+								<field name="total" class="oe_subtotal_footer_separator" />
+							</group>
+						</group>
+						<notebook>
+							<!--page string="Taxes">
+								<group>
+									<field name="tax_ids" mode="tree">
+										<tree editable="bottom" string="Taxes">
+											<field name="tax" />
+										</tree>
+									</field>
+								</group>
+							</page-->
+							<page string="Additional Fields">
+								<group>
+									<field name="additional_ids" mode="tree">
+										<tree editable="bottom" string="Additional Fields">
+											<field name="name" />
+											<field name="value" />
+										</tree>
+									</field>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--END FORM-->
+		<!--LIST: Products-->
+		<record id="view_sri_product_list" model="ir.ui.view">
+			<field name="name">sri.product.list</field>
+			<field name="model">sri.product</field>
+			<field name="arch" type="xml">
+				<tree string="Products">
+					<field name="name"/>
+					<field name="code"/>
+					<field name="unit_price"/>
+					<field name="iva" />
+				</tree>
+			</field>
+		</record>
+		<!--END LIST-->
+		<!--KANBAN: Products-->
+		<record id="view_sri_product_kanban" model="ir.ui.view">
+			<field name="name">sri.product.kanban</field>
+			<field name="model">sri.product</field>
+			<field name="arch" type="xml">
+				<kanban class="o_res_partner_kanban">
+					<field name="name" />
+					<field name="code" />
+					<field name="unit_price" />
+					<templates>
+						<t t-name="kanban-box">
+							<div class="oe_kanban_details oe_kanban_global_click">
+								<strong class="oe_partner_heading"><field name="name" /></strong>
+								<ul>
+									<li t-if="record.code.raw_value" class="o_text_overflow"><field name="code"/></li>
+									<li t-if="record.unit_price.raw_value" class="o_text_overflow"><field name="unit_price"/></li>
+								</ul>
+							</div>
+						</t>
+					</templates>
+				</kanban>
+			</field>
+		</record>
+		<!--END KANBAN-->
+		<!--ACTION: Products-->
+		<record id="action_sri_product_form" model="ir.actions.act_window">
+			<field name="name">Products</field>
+			<field name="res_model">sri.product</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<!--field name="search_view_id" ref="view_sri_product_search"/-->
+			<!--field name="view_id" ref="view_sri_product_list"/-->
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add an product
+				</p><p>
+				</p>
+			</field>
+		</record>
+		<menuitem action="action_sri_product_form"
+			id="menu_action_sri_product_form"
+			parent="menu_electronic_billing_product"
+			sequence="1" />
+		<!--END ACTION + MENU-->
+	</data>
+</openerp>

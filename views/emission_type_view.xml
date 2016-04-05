@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--FORM: Type of Emission-->
+		<record id="view_sri_emission_type_form" model="ir.ui.view">
+			<field name="name">sri.emission.type.form</field>
+			<field name="model">sri.emission.type</field>
+			<field name="arch" type="xml">
+				<form string="Type of Emission">
+					<sheet>
+						<group>
+							<field name="code" class="oe_inline" />
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--END FORM-->
+		<!--LIST: Type of Emission-->
+		<record id="view_sri_emission_type_list" model="ir.ui.view">
+			<field name="name">sri.emission.type.list</field>
+			<field name="model">sri.emission.type</field>
+			<field name="arch" type="xml">
+				<tree string="Type of Emission">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		<!--END LIST-->
+		<!--SEARCH: Type of Emission-->
+		<record id="view_sri_emission_type_search" model="ir.ui.view">
+			<field name="name">sri.emission.type.search</field>
+			<field name="model">sri.emission.type</field>
+			<field name="arch" type="xml">
+				<search string="Type of Emission">
+					<field name="name"/>
+					<!--filter string="" domain="[('', '=', '')]" /-->
+					<group expand="0" string="Group By">
+						<!--filter string="" domain="" context="{'group_by':''}" /-->
+					</group>
+				</search>
+			</field>
+		</record>
+		<!--END SEARCH-->
+		<!--ACTION: Type of Emission-->
+		<record id="action_sri_emission_type_form" model="ir.actions.act_window">
+			<field name="name">Type of Emission</field>
+			<field name="res_model">sri.emission.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_sri_emission_type_search"/>
+			<!--field name="view_id" ref="view_sri_emission_type_list"/-->
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add an type of emission
+				</p><p>
+				</p>
+			</field>
+		</record>
+		<menuitem action="action_sri_emission_type_form"
+			id="menu_action_sri_emission_type_form"
+			parent="menu_electronic_billing_configuration"
+			sequence="2" />
+		<!--END ACTION + MENU-->
+	</data>
+</openerp>

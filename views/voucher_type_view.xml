@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--FORM: Type of Voucher-->
+		<record id="view_sri_voucher_type_form" model="ir.ui.view">
+			<field name="name">sri.voucher.type.form</field>
+			<field name="model">sri.voucher.type</field>
+			<field name="arch" type="xml">
+				<form string="Type of Voucher">
+					<sheet>
+						<group>
+							<field name="code" class="oe_inline" />
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<!--END FORM-->
+		<!--LIST: Type of Voucher-->
+		<record id="view_sri_voucher_type_list" model="ir.ui.view">
+			<field name="name">sri.voucher.type.list</field>
+			<field name="model">sri.voucher.type</field>
+			<field name="arch" type="xml">
+				<tree string="Type of Voucher">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+		<!--END LIST-->
+		<!--ACTION: Type of Voucher-->
+		<record id="action_sri_voucher_type_form" model="ir.actions.act_window">
+			<field name="name">Type of Voucher</field>
+			<field name="res_model">sri.voucher.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<!--field name="search_view_id" ref="view_sri_voucher_type_search"/-->
+			<!--field name="view_id" ref="view_sri_voucher_type_list"/-->
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">
+					Click to add an type of voucher
+				</p><p>
+				</p>
+			</field>
+		</record>
+		<menuitem action="action_sri_voucher_type_form"
+			id="menu_action_sri_voucher_type_form"
+			parent="menu_electronic_billing_configuration"
+			sequence="3" />
+		<!--END ACTION + MENU-->
+	</data>
+</openerp>

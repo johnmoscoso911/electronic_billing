@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<!--
+		-->
+		<record id="final" model="sri.customer">
+			<field name="name">CONSUMIDOR FINAL</field>
+			<field name="identification">9999999999999</field>
+			<field name="email">final.consumer@sri.gov.ec</field>
+		</record>
+		<!--
+		-->
+		<record id="id04" model="sri.id.type">
+			<field name="name">RUC</field>
+			<field name="code">04</field>
+		</record>
+		<record id="id05" model="sri.id.type">
+			<field name="name">CEDULA</field>
+			<field name="code">05</field>
+		</record>
+		<record id="id06" model="sri.id.type">
+			<field name="name">PASAPORTE</field>
+			<field name="code">06</field>
+		</record>
+		<record id="id07" model="sri.id.type">
+			<field name="name">VENTA A CONSUMIDOR FINAL</field>
+			<field name="code">07</field>
+		</record>
+		<record id="id08" model="sri.id.type">
+			<field name="name">IDENTIFICACION DEL EXTERIOR</field>
+			<field name="code">08</field>
+		</record>
+		<record id="id09" model="sri.id.type">
+			<field name="name">PLACA</field>
+			<field name="code">09</field>
+		</record>
+		<!--
+		-->
+		<record id="voucher01" model="sri.voucher.type">
+			<field name="name">FACTURA</field>
+			<field name="code">01</field>
+		</record>
+		<record id="voucher04" model="sri.voucher.type">
+			<field name="name">NOTA DE CR&#201;DITO</field>
+			<field name="code">04</field>
+		</record>
+		<record id="voucher05" model="sri.voucher.type">
+			<field name="name">NOTA DE D&#201;BITO</field>
+			<field name="code">05</field>
+		</record>
+		<record id="voucher06" model="sri.voucher.type">
+			<field name="name">GU&#205;A DE REMISI&#211;N</field>
+			<field name="code">06</field>
+		</record>
+		<record id="voucher07" model="sri.voucher.type">
+			<field name="name">COMPROBANTE DE RETENCI&#211;N</field>
+			<field name="code">07</field>
+		</record>
+		<!--
+		-->
+		<record id="emission1" model="sri.emission.type">
+			<field name="name">Emisi&#243;n Normal</field>
+			<field name="code">1</field>
+		</record>
+		<record id="emission2" model="sri.emission.type">
+			<field name="name">Emisi&#243;n por Indisponibilidad del Sistema</field>
+			<field name="code">2</field>
+		</record>
+	</data>
+
+</openerp>

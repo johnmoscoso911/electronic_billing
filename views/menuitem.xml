@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_electronic_billing"
+			name="Electronic Billing"
+			icon="fa-usd"
+			web_icon="electronic_billing,static/description/icon.png" />
+
+		<menuitem id="menu_electronic_billing_customer"
+			name="Customers"
+			parent="menu_electronic_billing"
+			sequence="1" />
+		<menuitem id="menu_electronic_billing_product"
+			name="Products"
+			parent="menu_electronic_billing"
+			sequence="2" />
+		<menuitem id="menu_electronic_billing_configuration"
+			name="Configuration"
+			parent="menu_electronic_billing"
+			sequence="5" />
+	</data>
+</openerp>
